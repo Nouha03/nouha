@@ -8,15 +8,16 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class IndexController extends AbstractController
 {
+    #routage par attribut
     #[Route('/index', name: 'app_index')]
     public function index(): Response
     {
         return new Response(content: "Hello World !");
     }
-    #[Route('/about', name: 'app_about')]
-    public function about(): Response
+    #[Route('/about/{entier}', name: 'app_about', requirements:['entier' => '\d+'])]
+    public function about(int $entier = 1): Response
     {
-        return new Response("Hello World2 !");
+        return new Response( content: "Hello " .$entier);
     }
     #[Route('/contact', name: 'app_contact')]
     public function contact(): Response
