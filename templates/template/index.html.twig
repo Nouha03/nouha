@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TemplateController!{% endblock %}
+
+{% block body %}
+{{include('partials/navbar.html.twig')}}
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code>/var/www/html/src/Controller/TemplateController.php</code></li>
+        <li>Your template at <code>/var/www/html/templates/template/index.html.twig</code></li>
+    </ul>
+</div>
+{% endblock %}
+{% block stylesheets %}
+    {{parent()}}
+    <style>
+    h1{color: white};
+    </style>
+{% endblock %}
+{% block javascripts %}
+    {#{{parent()}}#}
+{% endblock %}
